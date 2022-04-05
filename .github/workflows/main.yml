@@ -61,7 +61,6 @@ jobs:
         shell: bash
         run: |
           curl -fsS -o get-poetry.py https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py
-          source $HOME/.poetry/env
           python get-poetry.py -y
           echo "::set-env name=PATH::$HOME/.poetry/bin:$PATH"
 
@@ -112,7 +111,6 @@ jobs:
               pwd && \
               ls && \
               curl -fsS -o get-poetry.py https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py && \
-              source $HOME/.poetry/env && \
               python get-poetry.py -y && \
               echo "::set-env name=PATH::$HOME/.poetry/bin:$PATH" && \
               poetry config virtualenvs.in-project true && \
